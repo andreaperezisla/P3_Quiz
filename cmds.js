@@ -169,16 +169,16 @@ exports.testCmd = (rl,id) => {
             const pregunta =quiz.question;
 
 
-            rl.question((`${colorize(pregunta, 'red')}${colorize("?", 'red')}`), respuesta => {
+            rl.question((`${colorize(pregunta, 'red')}${colorize("?", 'red')} `), respuesta => {
                 resp=respuesta.toLowerCase().trim();
 
 
                 if (resp===quiz.answer.toLowerCase().trim()){
-                    log('Su respuesta es:');
+                    log('Su respuesta es correcta.');
                     biglog('Correcta', 'green');
                     rl.prompt();
                 }else{
-                    log('Su respuesta es:');
+                    log('Su respuesta es incorrecta.');
                     biglog('Incorrecta', 'red');
                     rl.prompt();
                 }
